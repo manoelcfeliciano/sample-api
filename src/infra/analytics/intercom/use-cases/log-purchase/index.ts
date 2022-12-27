@@ -13,8 +13,6 @@ export class IntercomLogPurchase implements LogAnalyticsPurchase {
 				affiliation: 'web_checkout',
 				item_category: 'purchase',
 				item_variant: 'default',
-				promotion_id: params.payload.campaign?.id ?? '',
-				promotion_name: params.payload.campaign?.name ?? '',
 				price: {
 					amount: params.payload.payment.price * 100,
 					currency: params.payload.payment.currency,

@@ -8,12 +8,10 @@ export class RemotePaymentConfirmPurchase implements PaymentConfirmPurchase {
 		await this.analytics.log({
 			payload: {
 				payment: {
-					coupon: null,
 					currency: params.payment.currency,
 					price: params.payment.price,
 					tax: 0,
 				},
-				campaign: null,
 			},
 			user: params.user,
 		});

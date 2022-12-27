@@ -41,12 +41,10 @@ describe('PaymentLogPurchase Test', () => {
 		expect(stubs.analytics.log).toHaveBeenCalledWith({
 			payload: {
 				payment: {
-					coupon: null,
 					currency: params.payment.currency,
 					price: params.payment.price,
 					tax: 0,
 				},
-				campaign: null,
 			},
 			user: params.user,
 		});

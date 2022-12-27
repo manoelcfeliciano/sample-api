@@ -1,8 +1,10 @@
 import { faker } from '@faker-js/faker';
 import { makeFakeUser } from '~/domain/tests/mocks/entities/users/user';
+import { IntercomAnalytics } from '~/infra/analytics/intercom/protocols/intercom';
 
-export const makeFakeLogAnalyticsPurchaseParams = () => {
+export const makeFakeLogAnalyticsPurchaseParams = (params?: Partial<IntercomAnalytics.Params>) => {
 	const user = makeFakeUser();
+
 	return {
 		payload: {
 			payment: {
