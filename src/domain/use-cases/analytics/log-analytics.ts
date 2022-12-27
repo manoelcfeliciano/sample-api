@@ -1,4 +1,4 @@
-import { User } from '../entities/users/user';
+import { User } from '../../entities/users/user';
 
 export interface LogAnalytics<P = unknown> {
 	log(params: LogAnalytics.Params<P>): Promise<void>;

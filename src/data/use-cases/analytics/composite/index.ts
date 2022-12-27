@@ -1,4 +1,4 @@
-import { LogAnalytics } from '~/domain/use-cases/analytics';
+import { LogAnalytics } from '~/domain/use-cases/analytics/log-analytics';
 
 export class LogAnalyticsComposite implements LogAnalytics {
 	constructor(private readonly analytics: LogAnalytics[]) {}

@@ -12,7 +12,6 @@ export const makeFakeLogAnalyticsPurchaseParams = () => {
 				coupon: null,
 			},
 			campaign: null,
-			renewal: false,
 		},
 		user,
 	};

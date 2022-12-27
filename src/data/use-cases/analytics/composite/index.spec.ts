@@ -1,4 +1,4 @@
-import { LogAnalytics } from '~/domain/use-cases/analytics';
+import { LogAnalytics } from '~/domain/use-cases/analytics/log-analytics';
 import { Jester } from '~/tests/helpers/jest-types';
 import { LogAnalyticsComposite } from './index';
 

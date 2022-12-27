@@ -1,4 +1,4 @@
-import { LogAnalytics } from '~/domain/use-cases/analytics';
+import { LogAnalytics } from '~/domain/use-cases/analytics/log-analytics';
 
 export type LogAnalyticsPurchase = LogAnalytics<LogAnalyticsPurchase.Body>;
 
@@ -6,7 +6,6 @@ export namespace LogAnalyticsPurchase {
 	export interface Body {
 		readonly payment: Payment;
 		readonly campaign: Campaign | null;
-		readonly renewal: boolean;
 	}
 
 	export interface Payment {
