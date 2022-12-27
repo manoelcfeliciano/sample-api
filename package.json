@@ -16,9 +16,11 @@
 	"dependencies": {
 		"cors": "2.8.5",
 		"express": "4.18.2",
-		"fs": "0.0.1-security"
+		"fs": "0.0.1-security",
+		"intercom-client": "4.0.0"
 	},
 	"devDependencies": {
+		"@faker-js/faker": "7.6.0",
 		"@types/cors": "2.8.13",
 		"@types/express": "4.17.15",
 		"@types/jest": "29.2.4",

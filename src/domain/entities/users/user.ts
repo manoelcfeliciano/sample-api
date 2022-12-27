@@ -4,7 +4,7 @@ export interface User {
 	 *
 	 * [unique]
 	 */
-	readonly id: number;
+	readonly id: string;
 
 	/**
 	 * User's name
