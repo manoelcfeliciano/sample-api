@@ -1,7 +1,7 @@
 import { PaymentPurchaseController } from '.';
 import { makeAnyStub } from '../../../../tests/helpers/stub-maker/index';
 import { PaymentConfirmPurchase } from '../../../../domain/use-cases/payment/confirm-purchase';
-import { ok } from '~/presentation/helpers/http-helper';
+import { ok, serverError } from '~/presentation/helpers/http-helper';
 
 const makeSut = () => {
 	const stubs = {
@@ -17,7 +17,7 @@ const makeSut = () => {
 };
 
 describe('PaymentPurchaseController Test', () => {
-	test('should call logAnalytics with correct parameters', async () => {
+	test('should call remoteConfirmPurchase.confirm with correct parameters', async () => {
 		const { sut, stubs } = makeSut();
 
 		const remoteConfirmPurchaseSpy = jest.spyOn(stubs.remoteConfirmPurchase, 'confirm');
@@ -47,5 +47,15 @@ describe('PaymentPurchaseController Test', () => {
 				message: 'Purchased successfuly',
 			})
 		);
+	});
+
+	test('should return serverError response if remoteConfirmPurchase.confirm throws', async () => {
+		const { sut, stubs } = makeSut();
+
+		const fakeError = new Error('fake-error');
+
+		jest.spyOn(stubs.remoteConfirmPurchase, 'confirm').mockRejectedValue(fakeError);
+
+		await expect(sut.handle({})).resolves.toEqual(serverError(fakeError));
 	});
 });
