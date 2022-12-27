@@ -1,3 +1,4 @@
+import './config/module-alias';
 import { setupApp } from './config/app';
 import { config } from './config/main';
 
