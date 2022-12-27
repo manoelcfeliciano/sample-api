@@ -13,6 +13,8 @@ export class IntercomAnalyticsProviderAdapter implements IntercomAnalytics {
 	public report = async (name: string, params: IntercomAnalytics.Params): Promise<void> => {
 		const { user, metadata } = params;
 
+		if (!this.client) return;
+
 		const contact = await this.client.contacts.search({
 			data: {
 				query: {
