@@ -48,8 +48,6 @@ describe('IntercomPurchaseSubscription Test', () => {
 			affiliation: 'web_checkout',
 			item_category: 'purchase',
 			item_variant: 'default',
-			promotion_id: '',
-			promotion_name: '',
 			price: {
 				amount: params.payload.payment.price * 100,
 				currency: params.payload.payment.currency,
