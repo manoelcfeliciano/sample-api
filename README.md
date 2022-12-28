@@ -41,7 +41,7 @@ In other to persist data in Intercom, of course you would need an Intercom API K
 
 (\*) For simplicity purposes, this is not implemented in this project.
 
-(\*\*) For simplicity purposes, only one external service is implemented in this project.
+(\*\*) For simplicity purposes, only one external service (Intercom) is implemented in this project.
 
 <br/>
 
