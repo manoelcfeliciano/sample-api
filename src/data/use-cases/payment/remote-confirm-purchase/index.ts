@@ -5,7 +5,7 @@ export class RemotePaymentConfirmPurchase implements PaymentConfirmPurchase {
 	constructor(private readonly analytics: LogAnalyticsPurchase) {}
 
 	confirm = async (params: PaymentConfirmPurchase.Params): Promise<void> => {
-		// Write logic to mark as purchased here
+		// Logic to mark as purchased should go here
 
 		await this.analytics.log({
 			payload: {
