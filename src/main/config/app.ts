@@ -1,9 +1,11 @@
 import express from 'express';
-import { setupMiddlewares } from './middlewares/index';
+import { setupBeforeRoutesMiddlewares } from './middlewares/before-routes';
+import { setupAfterRoutesMiddlewares } from './middlewares/after-routes';
 import { setupRoutes } from './setup-routes';
 
 const app = express();
-setupMiddlewares(app);
+setupBeforeRoutesMiddlewares(app);
 setupRoutes(app);
+setupAfterRoutesMiddlewares(app);
 
 export default app;
