@@ -1,4 +1,4 @@
-import { Jester } from '~/tests/helpers/jest-types';
+import { Jester } from '~/utils/tests/helpers/jest-types';
 import { IObject } from '~/utils/types';
 import mockStub from './mock-stub';
 

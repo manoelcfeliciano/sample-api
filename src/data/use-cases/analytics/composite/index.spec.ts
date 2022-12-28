@@ -1,5 +1,5 @@
 import { LogAnalytics } from '~/domain/use-cases/analytics/log-analytics';
-import { Jester } from '~/tests/helpers/jest-types';
+import { Jester } from '~/utils/tests/helpers/jest-types';
 import { LogAnalyticsComposite } from './index';
 
 const makeAnalyticsStub = (implementation?: any): Jester.Mock.Stub<LogAnalytics> => ({

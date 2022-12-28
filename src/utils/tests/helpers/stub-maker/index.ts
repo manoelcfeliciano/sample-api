@@ -1,4 +1,4 @@
-import { Jester } from '~/tests/helpers/jest-types';
+import { Jester } from '~/utils/tests/helpers/jest-types';
 import { FunctionKeys, IObject } from '~/utils/types';
 import generateMakeAnyStub from './generate-make-any-stub';
 export interface IMakeAnyStubCommonFn {

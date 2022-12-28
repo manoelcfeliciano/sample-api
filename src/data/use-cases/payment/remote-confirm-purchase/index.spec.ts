@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { makeFakeUser } from '~/domain/tests/mocks/entities/users/user';
-import { makeAnyStub } from '~/tests/helpers/stub-maker';
+import { makeAnyStub } from '~/utils/tests/helpers/stub-maker';
 import { RemotePaymentConfirmPurchase } from '.';
 import { LogAnalyticsPurchase } from '../../../protocols/analytics/log-analytics-purchase';
 

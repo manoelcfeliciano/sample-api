@@ -1,5 +1,5 @@
 import { PaymentPurchaseController } from '.';
-import { makeAnyStub } from '../../../../tests/helpers/stub-maker/index';
+import { makeAnyStub } from '../../../../utils/tests/helpers/stub-maker/index';
 import { PaymentConfirmPurchase } from '../../../../domain/use-cases/payment/confirm-purchase';
 import { ok, serverError } from '~/presentation/helpers/http-helper';
 import { makeFakeUser } from '../../../../domain/tests/mocks/entities/users/user';

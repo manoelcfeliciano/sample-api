@@ -1,4 +1,4 @@
-import { Jester } from '~/tests/helpers/jest-types';
+import { Jester } from '~/utils/tests/helpers/jest-types';
 import { IObject } from '~/utils/types';
 
 const skipSafetyCheckProps: Array<string | RegExp> = [
@@ -14,7 +14,7 @@ const skipSafetyCheckProps: Array<string | RegExp> = [
 function shouldThrowOnKeyNotSet(key: PropertyKey) {
 	if (typeof key !== 'string') return true;
 
-	return skipSafetyCheckProps.some(matcher => {
+	return skipSafetyCheckProps.some((matcher) => {
 		if (matcher instanceof RegExp) {
 			return matcher.test(key as string);
 		}
@@ -44,7 +44,7 @@ function safetyCheck(stub: Jester.Mock.Stub<any>): Jester.Mock.Stub<any> {
 function wrapJestFnOnAppendFunctions(append: IObject) {
 	const keys = Object.keys(append);
 	const out = { ...append };
-	keys.forEach(key => {
+	keys.forEach((key) => {
 		const value = append[key];
 		if (typeof value === 'function') {
 			out[key] = jest.fn(value);
@@ -53,9 +53,13 @@ function wrapJestFnOnAppendFunctions(append: IObject) {
 	return out;
 }
 
-export default (append: IObject, keys: string[] | undefined, mockImplementation: any): Jester.Mock.Stub<any> => {
+export default (
+	append: IObject,
+	keys: string[] | undefined,
+	mockImplementation: any
+): Jester.Mock.Stub<any> => {
 	const stub: any = Object.assign({}, wrapJestFnOnAppendFunctions(append));
-	keys?.forEach(key => {
+	keys?.forEach((key) => {
 		const func = jest.fn(mockImplementation);
 		func.mockName(key);
 		stub[key] = func;
