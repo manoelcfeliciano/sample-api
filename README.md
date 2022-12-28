@@ -28,9 +28,9 @@
 ## 📜 About the Project
 
 This is a sample API that was created to demonstrate the use of Clean Architecture and TDD. For that
-we have a single route that receives a payment confirmation from an external provider. This route is
-responsible for validating the request, marking the payment as confirmed (\*) and logging analytics
-events to multiple external services (\*\*).
+we have a single route that receives a payment confirmation from an external provider (\*). This
+route is responsible for validating the request, marking the payment as confirmed (\*\*) and logging
+analytics events to multiple external services (\*\*\*).
 
 The main goal here is to demonstrate how to solve a real world problem of needing to log a purchase
 event to multiple external services in a scalable and maintainable way. For that, this project used
@@ -39,9 +39,12 @@ a well-known design pattern called Composite[https://refactoring.guru/design-pat
 In other to persist data in Intercom, of course you would need an Intercom API Key, defined in a
 `.env` file (example in `.env.example`), but this API will not throw any error if you don't.
 
-(\*) For simplicity purposes, this is not implemented in this project.
+(\*) For simplicity purposes, we are not implementing authentication for this.
 
-(\*\*) For simplicity purposes, only one external service (Intercom) is implemented in this project.
+(\*\*) For simplicity purposes, this is not implemented in this project.
+
+(\*\*\*) For simplicity purposes, only one external service (Intercom) is implemented in this
+project.
 
 <br/>
 
