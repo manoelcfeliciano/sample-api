@@ -12,7 +12,7 @@ export namespace PaymentConfirmPurchase {
 
 	export interface Payment {
 		readonly price: number;
-		readonly currency: 'BRL';
+		readonly currency: string;
 	}
 
 	export interface Coupon {

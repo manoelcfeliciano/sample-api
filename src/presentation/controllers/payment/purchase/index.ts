@@ -10,18 +10,14 @@ export class PaymentPurchaseController implements Controller {
 		try {
 			await this.remoteConfirmPurchase.confirm({
 				payment: {
-					price: 100,
-					currency: 'BRL',
+					price: request.payment.price,
+					currency: request.payment.currency,
 				},
-				user: {
-					id: 'valid-user-id',
-					email: 'valid@email.com',
-					name: 'valid-user-name',
-				},
+				user: request.user,
 			});
 
 			return ok({
-				message: 'Purchased successfuly',
+				message: 'Marked as purchased successfully',
 			});
 		} catch (error) {
 			return serverError(error);
@@ -30,5 +26,15 @@ export class PaymentPurchaseController implements Controller {
 }
 
 export namespace PaymentPurchaseController {
-	export type Request = {};
+	export type Request = {
+		payment: {
+			price: number;
+			currency: string;
+		};
+		user: {
+			id: string;
+			email: string;
+			name: string;
+		};
+	};
 }

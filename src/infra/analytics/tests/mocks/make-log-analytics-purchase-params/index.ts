@@ -10,7 +10,6 @@ export const makeFakeLogAnalyticsPurchaseParams = (params?: Partial<IntercomAnal
 			payment: {
 				price: faker.datatype.number({ min: 0 }),
 				currency: 'BRL',
-				tax: faker.datatype.number({ min: 0 }),
 				coupon: null,
 			},
 			campaign: null,

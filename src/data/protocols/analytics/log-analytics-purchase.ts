@@ -10,7 +10,6 @@ export namespace LogAnalyticsPurchase {
 	export interface Payment {
 		readonly price: number;
 		readonly currency: string;
-		readonly tax: number;
 	}
 
 	export type Params = LogAnalytics.Params<Body>;

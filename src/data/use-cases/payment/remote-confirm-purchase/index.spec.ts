@@ -43,7 +43,6 @@ describe('PaymentLogPurchase Test', () => {
 				payment: {
 					currency: params.payment.currency,
 					price: params.payment.price,
-					tax: 0,
 				},
 			},
 			user: params.user,
